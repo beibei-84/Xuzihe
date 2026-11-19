@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- 姓名：徐子荷 | 学号：24001010734 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>知乎的模仿与制作 | 徐子荷</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body class="Xuzihe_body">
+  <!-- 背景动画 -->
+  <canvas id="Xuzihe_canvas" class="Xuzihe_canvas"></canvas>
+  <div class="Xuzihe_glow Xuzihe_glow--left"></div>
+  <div class="Xuzihe_glow Xuzihe_glow--right"></div>
+
+  <div class="Xuzihe_page">
+    <header class="Xuzihe_header">
+      <span class="Xuzihe_badge">模仿项目 · Zhihu Clone</span>
+      <h1 class="Xuzihe_title">知乎的模仿与制作</h1>
+      <p class="Xuzihe_subtitle">
+        原生 HTML / CSS / JavaScript 复刻知乎核心体验，Node.js + Express + MySQL 提供数据服务
+      </p>
+      <ul class="Xuzihe_meta">
+        <li class="Xuzihe_metaItem">
+          <span class="Xuzihe_metaLabel">姓名</span>
+          <span class="Xuzihe_metaValue">徐子荷</span>
+        </li>
+        <li class="Xuzihe_metaItem">
+          <span class="Xuzihe_metaLabel">学号</span>
+          <span class="Xuzihe_metaValue">24001010734</span>
+        </li>
+        <li class="Xuzihe_metaItem">
+          <span class="Xuzihe_metaLabel">项目类别</span>
+          <span class="Xuzihe_metaValue">模仿</span>
+        </li>
+      </ul>
+    </header>
+
+    <main class="Xuzihe_main">
+      <section class="Xuzihe_section">
+        <div class="Xuzihe_sectionHead">
+          <h2 class="Xuzihe_sectionTitle">页面导航</h2>
+          <span class="Xuzihe_sectionHint" id="Xuzihe_pageCount">已完成 0 个页面</span>
+        </div>
+
+        <nav class="Xuzihe_nav" id="Xuzihe_nav">
+          <a class="Xuzihe_card Xuzihe_card--active" href="index.html">
+            <span class="Xuzihe_cardIndex">01</span>
+            <h3 class="Xuzihe_cardTitle">首页</h3>
+            <p class="Xuzihe_cardDesc">项目信息总览与所有页面的导航入口</p>
+            <span class="Xuzihe_cardTag">当前页面</span>
+          </a>
+
+          <div class="Xuzihe_card Xuzihe_card--ghost">
+            <span class="Xuzihe_cardIndex">··</span>
+            <h3 class="Xuzihe_cardTitle">更多页面开发中</h3>
+            <p class="Xuzihe_cardDesc">新页面完成后会在此追加超链接入口</p>
+            <span class="Xuzihe_cardTag">建设中</span>
+          </div>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="Xuzihe_footer">
+      <span>徐子荷 · 24001010734 · 2026</span>
+      <span class="Xuzihe_status" id="Xuzihe_status">
+        <i class="Xuzihe_statusDot" id="Xuzihe_statusDot"></i>
+        <span id="Xuzihe_statusText">后端接口检测中…</span>
+      </span>
+    </footer>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

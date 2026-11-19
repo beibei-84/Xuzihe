@@ -1,0 +1,367 @@
+/* 姓名：徐子荷 | 学号：24001010734 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash */
+
+:root {
+  --Xuzihe_bg: #070d1a;
+  --Xuzihe_text: #eaf1ff;
+  --Xuzihe_textDim: #93a4c4;
+  --Xuzihe_accent: #2f7bff;
+  --Xuzihe_accentSoft: rgba(47, 123, 255, 0.16);
+  --Xuzihe_line: rgba(140, 170, 230, 0.18);
+  --Xuzihe_card: rgba(255, 255, 255, 0.045);
+  --Xuzihe_cardHover: rgba(255, 255, 255, 0.085);
+  --Xuzihe_radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+.Xuzihe_body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--Xuzihe_text);
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC",
+    "Noto Sans CJK SC", sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(47, 123, 255, 0.22), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(124, 92, 255, 0.18), transparent 50%),
+    linear-gradient(160deg, #060b16 0%, #0a1324 55%, #070d1a 100%);
+}
+
+/* ---------- 背景动画 ---------- */
+.Xuzihe_canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.Xuzihe_glow {
+  position: fixed;
+  z-index: 0;
+  width: 42vw;
+  height: 42vw;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.Xuzihe_glow--left {
+  top: -12vw;
+  left: -10vw;
+  background: rgba(47, 123, 255, 0.3);
+}
+
+.Xuzihe_glow--right {
+  right: -14vw;
+  bottom: -16vw;
+  background: rgba(124, 92, 255, 0.26);
+}
+
+/* ---------- 页面容器 ---------- */
+.Xuzihe_page {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: clamp(48px, 8vh, 96px) 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 7vh, 72px);
+}
+
+/* ---------- 头部 ---------- */
+.Xuzihe_header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  animation: Xuzihe_fadeUp 0.8s ease both;
+}
+
+.Xuzihe_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #bcd4ff;
+  border: 1px solid rgba(47, 123, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(47, 123, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.Xuzihe_badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4f9bff;
+  box-shadow: 0 0 10px #4f9bff;
+}
+
+.Xuzihe_title {
+  font-size: clamp(38px, 6.4vw, 76px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  background: linear-gradient(100deg, #ffffff 10%, #9dc4ff 48%, #8f7bff 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Xuzihe_subtitle {
+  max-width: 640px;
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.9;
+  color: var(--Xuzihe_textDim);
+}
+
+.Xuzihe_meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+  list-style: none;
+}
+
+.Xuzihe_metaItem {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--Xuzihe_line);
+  border-radius: 12px;
+  background: var(--Xuzihe_card);
+  backdrop-filter: blur(8px);
+}
+
+.Xuzihe_metaLabel {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--Xuzihe_textDim);
+}
+
+.Xuzihe_metaValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ---------- 导航区 ---------- */
+.Xuzihe_section {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: Xuzihe_fadeUp 0.8s 0.12s ease both;
+}
+
+.Xuzihe_sectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--Xuzihe_line);
+}
+
+.Xuzihe_sectionTitle {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.Xuzihe_sectionHint {
+  font-size: 13px;
+  color: var(--Xuzihe_textDim);
+  letter-spacing: 0.06em;
+}
+
+.Xuzihe_nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.Xuzihe_card {
+  position: relative;
+  display: block;
+  padding: 26px 24px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--Xuzihe_line);
+  border-radius: var(--Xuzihe_radius);
+  background: var(--Xuzihe_card);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: transform 0.32s ease, border-color 0.32s ease, background 0.32s ease,
+    box-shadow 0.32s ease;
+}
+
+.Xuzihe_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(47, 123, 255, 0.18), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.32s ease;
+  pointer-events: none;
+}
+
+.Xuzihe_card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(47, 123, 255, 0.6);
+  background: var(--Xuzihe_cardHover);
+  box-shadow: 0 22px 46px -22px rgba(47, 123, 255, 0.75);
+}
+
+.Xuzihe_card:hover::after {
+  opacity: 1;
+}
+
+.Xuzihe_card--active {
+  border-color: rgba(47, 123, 255, 0.55);
+  background: linear-gradient(150deg, rgba(47, 123, 255, 0.2), rgba(255, 255, 255, 0.04));
+}
+
+.Xuzihe_card--ghost {
+  border-style: dashed;
+  background: transparent;
+  cursor: default;
+}
+
+.Xuzihe_card--ghost:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+  border-color: var(--Xuzihe_line);
+}
+
+.Xuzihe_card--ghost .Xuzihe_cardTitle,
+.Xuzihe_card--ghost .Xuzihe_cardIndex {
+  color: var(--Xuzihe_textDim);
+}
+
+.Xuzihe_cardIndex {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: #6f9bff;
+}
+
+.Xuzihe_cardTitle {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.Xuzihe_cardDesc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--Xuzihe_textDim);
+  margin-bottom: 18px;
+}
+
+.Xuzihe_cardTag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #bcd4ff;
+  border: 1px solid rgba(47, 123, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(47, 123, 255, 0.12);
+}
+
+/* ---------- 页脚 ---------- */
+.Xuzihe_footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 26px;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--Xuzihe_textDim);
+  border-top: 1px solid var(--Xuzihe_line);
+  animation: Xuzihe_fadeUp 0.8s 0.2s ease both;
+}
+
+.Xuzihe_status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Xuzihe_statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7d8aa5;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Xuzihe_statusDot--on {
+  background: #35d07f;
+  box-shadow: 0 0 10px rgba(53, 208, 127, 0.9);
+}
+
+.Xuzihe_statusDot--off {
+  background: #ff6b6b;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.8);
+}
+
+@keyframes Xuzihe_fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .Xuzihe_page {
+    padding-top: 44px;
+    gap: 36px;
+  }
+
+  .Xuzihe_metaItem {
+    padding: 8px 14px;
+  }
+
+  .Xuzihe_nav {
+    grid-template-columns: 1fr;
+  }
+
+  .Xuzihe_footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Xuzihe_header,
+  .Xuzihe_section,
+  .Xuzihe_footer {
+    animation: none;
+  }
+}
