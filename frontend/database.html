@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- 姓名：徐子荷 | 学号：24001010734 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数据库连接 | 知乎的模仿与制作</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/database.css" />
+</head>
+<body class="Xuzihe_body">
+  <canvas id="Xuzihe_canvas" class="Xuzihe_canvas"></canvas>
+  <div class="Xuzihe_glow Xuzihe_glow--left"></div>
+  <div class="Xuzihe_glow Xuzihe_glow--right"></div>
+
+  <div class="Xuzihe_page Xuzihe_page--narrow">
+    <header class="Xuzihe_header">
+      <a class="Xuzihe_back" href="index.html">← 返回首页</a>
+      <span class="Xuzihe_badge">MySQL · 连接测试</span>
+      <h1 class="Xuzihe_title Xuzihe_title--small">数据库连接</h1>
+      <p class="Xuzihe_subtitle">
+        输入 MySQL 用户名与密码，服务端会尝试建立真实连接，并返回成功或失败的详细信息。
+      </p>
+    </header>
+
+    <main class="Xuzihe_main">
+      <form class="Xuzihe_form" id="Xuzihe_dbForm" autocomplete="off">
+        <div class="Xuzihe_field">
+          <label class="Xuzihe_label" for="Xuzihe_user">用户名</label>
+          <input
+            class="Xuzihe_input"
+            id="Xuzihe_user"
+            name="user"
+            type="text"
+            value="root"
+            placeholder="请输入数据库用户名"
+          />
+        </div>
+
+        <div class="Xuzihe_field">
+          <label class="Xuzihe_label" for="Xuzihe_password">密码</label>
+          <input
+            class="Xuzihe_input"
+            id="Xuzihe_password"
+            name="password"
+            type="password"
+            value="root"
+            placeholder="请输入数据库密码"
+          />
+        </div>
+
+        <button class="Xuzihe_submit" id="Xuzihe_submit" type="submit">连接数据库</button>
+      </form>
+
+      <div class="Xuzihe_result" id="Xuzihe_result" hidden>
+        <h2 class="Xuzihe_resultTitle" id="Xuzihe_resultTitle"></h2>
+        <p class="Xuzihe_resultMsg" id="Xuzihe_resultMsg"></p>
+        <dl class="Xuzihe_resultList" id="Xuzihe_resultList"></dl>
+      </div>
+    </main>
+
+    <footer class="Xuzihe_footer">
+      <span>徐子荷 · 24001010734 · 2026</span>
+      <span>接口：POST /api/database/connect</span>
+    </footer>
+  </div>
+
+  <script src="js/Xuzihe_canvas.js"></script>
+  <script src="js/database.js"></script>
+</body>
+</html>

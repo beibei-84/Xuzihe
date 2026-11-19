@@ -1,0 +1,192 @@
+/* 姓名：徐子荷 | 学号：24001010734 | 时间：2026-11-19 | 大模型：DeepSeek-V4.1-Flash */
+
+.Xuzihe_page--narrow {
+  width: min(760px, 92vw);
+}
+
+.Xuzihe_title--small {
+  font-size: clamp(32px, 5vw, 54px);
+}
+
+.Xuzihe_back {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--Xuzihe_textDim);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.Xuzihe_back:hover {
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.Xuzihe_main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: Xuzihe_fadeUp 0.8s 0.12s ease both;
+}
+
+/* ---------- 表单 ---------- */
+.Xuzihe_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--Xuzihe_line);
+  border-radius: var(--Xuzihe_radius);
+  background: var(--Xuzihe_card);
+  backdrop-filter: blur(12px);
+}
+
+.Xuzihe_field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Xuzihe_label {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--Xuzihe_textDim);
+}
+
+.Xuzihe_input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--Xuzihe_text);
+  border: 1px solid var(--Xuzihe_line);
+  border-radius: 12px;
+  background: rgba(9, 16, 30, 0.7);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.Xuzihe_input::placeholder {
+  color: rgba(147, 164, 196, 0.65);
+}
+
+.Xuzihe_input:focus {
+  border-color: rgba(47, 123, 255, 0.75);
+  background: rgba(13, 23, 42, 0.9);
+  box-shadow: 0 0 0 4px var(--Xuzihe_accentSoft);
+}
+
+.Xuzihe_submit {
+  margin-top: 6px;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-family: inherit;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(120deg, #2f7bff, #6a5cff);
+  box-shadow: 0 16px 32px -18px rgba(47, 123, 255, 0.95);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.Xuzihe_submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px -18px rgba(47, 123, 255, 1);
+}
+
+.Xuzihe_submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* ---------- 结果提示 ---------- */
+.Xuzihe_result {
+  padding: 24px 26px;
+  border: 1px solid var(--Xuzihe_line);
+  border-radius: var(--Xuzihe_radius);
+  background: var(--Xuzihe_card);
+  backdrop-filter: blur(12px);
+  animation: Xuzihe_fadeUp 0.4s ease both;
+}
+
+.Xuzihe_result--success {
+  border-color: rgba(53, 208, 127, 0.55);
+  background: rgba(53, 208, 127, 0.08);
+}
+
+.Xuzihe_result--error {
+  border-color: rgba(255, 107, 107, 0.55);
+  background: rgba(255, 107, 107, 0.08);
+}
+
+.Xuzihe_resultTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.Xuzihe_resultTitle::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.Xuzihe_result--success .Xuzihe_resultTitle {
+  color: #46e08d;
+}
+
+.Xuzihe_result--error .Xuzihe_resultTitle {
+  color: #ff8a8a;
+}
+
+.Xuzihe_resultMsg {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--Xuzihe_textDim);
+  word-break: break-all;
+}
+
+.Xuzihe_resultList {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 18px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--Xuzihe_line);
+  font-size: 13px;
+}
+
+.Xuzihe_resultList:empty {
+  display: none;
+}
+
+.Xuzihe_resultKey {
+  color: var(--Xuzihe_textDim);
+  letter-spacing: 0.08em;
+}
+
+.Xuzihe_resultValue {
+  color: #ffffff;
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .Xuzihe_resultList {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .Xuzihe_resultKey {
+    margin-top: 8px;
+  }
+}

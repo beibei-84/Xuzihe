@@ -4,9 +4,11 @@
  */
 const express = require('express');
 const Xuzihe_healthController = require('../controllers/Xuzihe_healthController');
+const Xuzihe_databaseController = require('../controllers/Xuzihe_databaseController');
 
 const Xuzihe_router = express.Router();
 
 Xuzihe_router.get('/health', Xuzihe_healthController.Xuzihe_getHealth);
+Xuzihe_router.post('/database/connect', Xuzihe_databaseController.Xuzihe_connectDatabase);
 
 module.exports = Xuzihe_router;

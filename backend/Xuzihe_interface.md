@@ -33,3 +33,56 @@
   ```
 
 - **修改时间**：2026-11-19
+
+---
+
+## 接口 02
+
+- **接口路径**：`/api/database/connect`
+- **HTTP 方法**：`POST`
+- **请求参数**（`Content-Type: application/json`）：
+
+  | 参数 | 类型 | 必填 | 说明 |
+  | --- | --- | --- | --- |
+  | user | string | 是 | MySQL 用户名 |
+  | password | string | 是 | MySQL 密码 |
+
+  ```
+  示例：{ "user": "root", "password": "root" }
+  ```
+
+- **响应格式**：
+
+  连接成功：
+
+  ```json
+  {
+    "code": 0,
+    "msg": "数据库连接成功",
+    "data": {
+      "host": "localhost",
+      "user": "root",
+      "version": "8.1.0",
+      "database": null,
+      "time": "2026-11-19T06:02:39.245Z"
+    }
+  }
+  ```
+
+  连接失败：
+
+  ```json
+  {
+    "code": 2,
+    "msg": "数据库连接失败：Access denied for user 'root'@'localhost' (using password: YES)",
+    "data": { "host": "localhost", "user": "root", "time": "2026-11-19T06:02:39.260Z" }
+  }
+  ```
+
+  参数缺失（HTTP 400）：
+
+  ```json
+  { "code": 1, "msg": "用户名不能为空", "data": null }
+  ```
+
+- **修改时间**：2026-11-19
